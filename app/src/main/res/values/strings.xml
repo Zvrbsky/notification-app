@@ -3,5 +3,5 @@
     <string name="channelID">1</string>
     <string name="channel_name">New Product Channel</string>
     <string name="channel_description">Channel for notifications about adding new products to App 1</string>
-    <string name="notification_title">Created new product</string>
+    <string name="notification_title">Added new product to Shopping List App</string>
 </resources>
