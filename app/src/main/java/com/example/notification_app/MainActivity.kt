@@ -1,4 +1,4 @@
-package com.example.broadcastreceiver
+package com.example.notification_app
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
