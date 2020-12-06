@@ -15,7 +15,7 @@ import androidx.core.app.NotificationManagerCompat
 const val PRODUCT_NAME = "name"
 const val PRODUCT_ID = "product id"
 const val NEW_PRODUCT_ADDED_BROADCAST = "SHOPPING_LIST_APP.NEW_PRODUCT_ADDED_BROADCAST"
-const val SHOW_PRODUCT_DETAILS_BROADCAST = "BROADCAST_RECEIVER.SHOW_PRODUCT_DETAILS_BROADCAST"
+const val SHOW_PRODUCT_DETAILS_BROADCAST = "NOTIFICATION_APP.SHOW_PRODUCT_DETAILS_BROADCAST"
 
 class MainActivity : AppCompatActivity() {
     lateinit var receiver: BroadcastReceiver
