@@ -12,10 +12,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 
 
-const val PRODUCT_NAME = "name"
-const val PRODUCT_ID = "product id"
-const val NEW_PRODUCT_ADDED_BROADCAST = "SHOPPING_LIST_APP.NEW_PRODUCT_ADDED_BROADCAST"
-const val SHOW_PRODUCT_DETAILS_BROADCAST = "NOTIFICATION_APP.SHOW_PRODUCT_DETAILS_BROADCAST"
+
 
 class MainActivity : AppCompatActivity() {
     lateinit var receiver: BroadcastReceiver
@@ -24,34 +21,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        createNotificationChannel()
-        var id = 0
-
-        val notificationBuilder = NotificationCompat.Builder(this,
-                getString(R.string.channelID))
-                .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentTitle(getString(R.string.notification_title))
-                .setAutoCancel(true)
-
-        val notificationManager = NotificationManagerCompat.from(this)
-
-        receiver = object : BroadcastReceiver() {
-            override fun onReceive(context: Context?, intent: Intent?) {
-                val reactionIntent = Intent(SHOW_PRODUCT_DETAILS_BROADCAST)
-                val productId =  intent?.getLongExtra(PRODUCT_ID, 0)
-                Log.d("MainActivity", "Broadcast received for product with id: $productId")
-                reactionIntent.putExtra(PRODUCT_ID, productId)
-                val pendingIntent: PendingIntent = PendingIntent.getBroadcast(context, 0, reactionIntent, PendingIntent.FLAG_UPDATE_CURRENT)
-
-                val notification = notificationBuilder
-                        .setContentText(intent?.getStringExtra(PRODUCT_NAME))
-                        .addAction(R.mipmap.ic_launcher, "Edit", pendingIntent)
-                        .build()
-                notificationManager.notify(id++, notification)
-            }
+        Intent(this, NotificationService::class.java).also { intent ->
+            startService(intent)
         }
-        registerReceiver(receiver,
-                IntentFilter(NEW_PRODUCT_ADDED_BROADCAST))
     }
 
     override fun onDestroy() {
