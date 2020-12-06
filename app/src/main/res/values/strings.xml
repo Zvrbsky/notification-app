@@ -4,4 +4,6 @@
     <string name="channel_name">New Product Channel</string>
     <string name="channel_description">Channel for notifications about adding new products to App 1</string>
     <string name="notification_title">Added new product to Shopping List App</string>
+    <string name="turn_on_notifications">Turn On Notifications</string>
+    <string name="turn_off_notifications">Turn Off Notifications</string>
 </resources>
