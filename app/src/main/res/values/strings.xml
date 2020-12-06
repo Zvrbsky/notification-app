@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BroadcastReceiver</string>
+    <string name="channelID">1</string>
+    <string name="channel_name">New Product Channel</string>
+    <string name="channel_description">Channel for notifications about adding new products to App 1</string>
+    <string name="notification_title">Created new product</string>
+</resources>
