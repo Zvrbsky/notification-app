@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
 
                 val notification = notificationBuilder
                         .setContentText(intent?.getStringExtra(PRODUCT_NAME))
-                        .setContentIntent(pendingIntent)
+                        .addAction(R.mipmap.ic_launcher, "Edit", pendingIntent)
                         .build()
                 notificationManager.notify(id++, notification)
             }
